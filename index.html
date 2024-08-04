@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatGPT Redirect</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        input {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>ChatGPT Redirect</h1>
+        <input type="text" id="userPrompt" placeholder="Enter your prompt here">
+        <br>
+        <button onclick="redirectToChatGPT()">Submit</button>
+    </div>
+    <script>
+        function redirectToChatGPT() {
+            const userPrompt = document.getElementById('userPrompt').value;
+            const encodedPrompt = encodeURIComponent(userPrompt);
+            const chatGPTUrl = `https://chat.openai.com/chat?prompt=${encodedPrompt}`;
+            window.location.href = chatGPTUrl;
+        }
+    </script>
+</body>
+</html>
